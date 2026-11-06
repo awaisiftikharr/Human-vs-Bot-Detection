@@ -8,6 +8,8 @@ BASE_DIR = Path(__file__).resolve().parent
 MODEL_PATH = BASE_DIR / "bot_detector.pkl"
 FEATURE_COLUMNS = ["Distance", "Time", "Jitter"]
 
+st.set_page_config(page_title="Human vs Bot Detector", page_icon="🤖", layout="centered")
+
 
 @st.cache_resource
 def load_model():
@@ -29,7 +31,6 @@ def build_features(distance: float, elapsed_time: float, jitter: float) -> pd.Da
     )
 
 
-st.set_page_config(page_title="Human vs Bot Detector", page_icon="🤖", layout="centered")
 st.title("Human vs. Bot Detection")
 st.caption("A behavioural-signal classification demo using a Random Forest model.")
 st.info(
