@@ -2,7 +2,7 @@ from pathlib import Path
 
 import pandas as pd
 
-ROOT = Path(__file__).resolve().parent
+ROOT = Path(__file__).resolve().parent.parent
 DATA_PATH = ROOT / "behavior_data.csv"
 
 
